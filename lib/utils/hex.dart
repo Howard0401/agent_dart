@@ -37,6 +37,10 @@ BigInt hexToBn(
   }
   if (isNegative == false) {
     if (isHex(value)) {
+      value as String;
+      if (value.startsWith('0x')) {
+        value = value.substring(2);
+      }
       String sValue = value is num
           ? int.parse(value.toString(), radix: 10).toRadixString(16)
           : value;
